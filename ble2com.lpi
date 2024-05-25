@@ -15,6 +15,12 @@
       <UseAppBundle Value="False"/>
       <ResourceType Value="res"/>
     </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <Attributes pvaPreRelease="True"/>
+      <StringTable Comments="https://github.com/magdel/ble2com" FileDescription="Reads BLE and writes to COM port " LegalCopyright="All rights reserved" ProductName="ble2com"/>
+    </VersionInfo>
     <BuildModes Count="5">
       <Item1 Name="Debug" Default="True"/>
       <Item2 Name="Win64">

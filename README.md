@@ -6,6 +6,8 @@ Reads BLE data and writes to COM-port so it can be readout as COM-port via virtu
 Start application and select device and service to read from.
 Also use bledevice.ini to specify COM-port. And you may set device and service to select and connect automatically.
 
+![Sample running view](docs/images/img.png)
+
 ### Releases
 
 For direct downloads, check out [Releases](../../releases).

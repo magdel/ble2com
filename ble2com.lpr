@@ -70,7 +70,7 @@ var
   Adapter: TSimpleBleAdapter = 0;
 
   DeviceIdFromConfig: string = 'None';
-  ServiceIdFromConfig: string = 'None';
+  CharacteristicFromConfig: string = 'None';
   ComPortFromConfig: string = 'None';
   SerialPortStream: TSerialStream;
   BufferMemoryStream: TMemoryStream;
@@ -326,13 +326,13 @@ var
     end;
 
     Selection := -1;
-    if (ServiceIdFromConfig <> 'None') then
+    if (CharacteristicFromConfig <> 'None') then
     begin
 
       for i := 0 to (CharacteristicCount - 1) do
       begin
 
-        if CharacteristicList[i].Characteristic.Value = ServiceIdFromConfig then
+        if CharacteristicList[i].Characteristic.Value = CharacteristicFromConfig then
         begin
           Selection := i;
           WriteLn('Selected: ' + IntToStr(Selection));
@@ -408,13 +408,13 @@ var
     iniF := TIniFile.Create('bledevice.ini');
     try
       DeviceIdFromConfig := iniF.ReadString('BleDevice', 'deviceId', 'None');
-      ServiceIdFromConfig := iniF.ReadString('BleDevice', 'serviceId', 'None');
+      CharacteristicFromConfig := iniF.ReadString('BleDevice', 'characteristic', 'None');
       ComPortFromConfig := iniF.ReadString('ComPort', 'Port', 'None');
     finally
       iniF.Free;
     end;
     WriteLn('Device id: ' + DeviceIdFromConfig);
-    WriteLn('Service id: ' + ServiceIdFromConfig);
+    WriteLn('Characteristic: ' + CharacteristicFromConfig);
     InitCriticalSection(BufferCriticalSection);
     WaitForReadEvent := RTLEventCreate;
   end;
@@ -437,6 +437,9 @@ var
 
 var
   Application: TBle2ComApplication;
+
+{$R *.res}
+
 begin
   Application := TBle2ComApplication.Create(nil);
   Application.Title := 'SimpleBleScanTest';
