@@ -36,15 +36,14 @@ uses
 
 type
 
-  { TSimpleBleNotifyExample }
+  { TBle2ComApplication }
 
-  TSimpleBleNotifyExample = class(TCustomApplication)
+  TBle2ComApplication = class(TCustomApplication)
   protected
     procedure DoRun; override;
   public
     constructor Create(TheOwner: TComponent); override;
     destructor Destroy; override;
-    procedure WriteHelp; virtual;
   end;
 
   TServiceCharacteristic = record
@@ -145,8 +144,9 @@ var
     //do nothing
   end;
 
-  procedure PeripheralOnNotify(Service: TSimpleBleUuid; Characteristic: TSimpleBleUuid;
-    Data: pbyte; DataLength: nativeuint; Userdata: PPointer);
+  procedure PeripheralOnNotify(Service: TSimpleBleUuid;
+    Characteristic: TSimpleBleUuid; Data: pbyte; DataLength: nativeuint;
+    Userdata: PPointer);
   var
     i: integer;
   begin
@@ -195,7 +195,7 @@ var
   { -------------------------------- }
 
 
-  procedure TSimpleBleNotifyExample.DoRun;
+  procedure TBle2ComApplication.DoRun;
   var
     ErrorMsg: string;
     Adapter: TSimpleBleAdapter;
@@ -209,28 +209,11 @@ var
 
     {$IFDEF DYNAMIC_LOADING}
   if not SimpleBleLoadLibrary() then begin
-    writeln('Failed to load library');
-    readln;
+    WriteLn('Failed to load library simpleble.dll and simpleble-c.dll');
+    ReadLn;
     exit;
   end;
     {$ENDIF}
-
-    // quick check parameters
-    ErrorMsg := CheckOptions('h', 'help');
-    if ErrorMsg <> '' then
-    begin
-      ShowException(Exception.Create(ErrorMsg));
-      Terminate;
-      Exit;
-    end;
-
-    // parse parameters
-    if HasOption('h', 'help') then
-    begin
-      WriteHelp;
-      Terminate;
-      Exit;
-    end;
 
     // look for BLE adapters
     if SimpleBleAdapterGetCount() = 0 then
@@ -333,8 +316,8 @@ var
       begin
         if CharacteristicCount >= SERVICES_LIST_SIZE then
           break;
-        WriteLn('[' + IntToStr(CharacteristicCount) + '] ' + Service.Uuid.Value +
-          ' ' + Service.Characteristics[j].Uuid.Value);
+        WriteLn('[' + IntToStr(CharacteristicCount) + '] ' +
+          Service.Uuid.Value + ' ' + Service.Characteristics[j].Uuid.Value);
         CharacteristicList[CharacteristicCount].Service := Service.Uuid;
         CharacteristicList[CharacteristicCount].Characteristic :=
           Service.Characteristics[j].Uuid;
@@ -386,11 +369,11 @@ var
     SimpleBlePeripheralNotify(Peripheral, CharacteristicList[Selection].Service,
       CharacteristicList[Selection].Characteristic, @PeripheralOnNotify, nil);
 
-    WriteLn('Listening..');
+    WriteLn('Listening until application is closed..');
     while (True) do
     begin
       Sleep(10000);
-      WriteLn('Listening..');
+      WriteLn('Listening..' + DateTimeToStr(Now));
     end;
 
     // unsubscribe notifications
@@ -416,7 +399,7 @@ var
     Terminate;
   end;
 
-  constructor TSimpleBleNotifyExample.Create(TheOwner: TComponent);
+  constructor TBle2ComApplication.Create(TheOwner: TComponent);
   var
     iniF: TIniFile;
   begin
@@ -436,11 +419,10 @@ var
     WaitForReadEvent := RTLEventCreate;
   end;
 
-  destructor TSimpleBleNotifyExample.Destroy;
+  destructor TBle2ComApplication.Destroy;
   var
     i: integer;
   begin
-    inherited Destroy;
     WriteLn('Releasing allocated resources.');
     // Release all saved peripherals
     for i := 0 to (PeripheralListLen - 1) do
@@ -449,19 +431,14 @@ var
     SimpleBleAdapterReleaseHandle(Adapter);
     DoneCriticalsection(BufferCriticalSection);
     RTLEventDestroy(WaitForReadEvent);
-  end;
-
-  procedure TSimpleBleNotifyExample.WriteHelp;
-  begin
-    { add your help code here }
-    WriteLn('Usage: ', ExeName, ' -h');
+    inherited Destroy;
   end;
 
 
 var
-  Application: TSimpleBleNotifyExample;
+  Application: TBle2ComApplication;
 begin
-  Application := TSimpleBleNotifyExample.Create(nil);
+  Application := TBle2ComApplication.Create(nil);
   Application.Title := 'SimpleBleScanTest';
   Application.Run;
   Application.Free;
