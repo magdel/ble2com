@@ -69,3 +69,5 @@ __recovery/
 modules/
 /bin/Debug/
 /backup/
+/.idea/
+/lib/
