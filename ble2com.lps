@@ -9,11 +9,11 @@
         <Filename Value="ble2com.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="9"/>
-        <CursorPos X="64" Y="30"/>
+        <TopLine Value="431"/>
+        <CursorPos X="17" Y="145"/>
         <UsageCount Value="30"/>
         <Bookmarks Count="1">
-          <Item0 X="16" Y="407" ID="1"/>
+          <Item0 Y="424" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit0>
@@ -22,17 +22,17 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="SerialStream"/>
         <EditorIndex Value="1"/>
-        <CursorPos Y="9"/>
+        <CursorPos X="47" Y="12"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="SimpleBleUnit\simpleble.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="SimpleBle"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="385"/>
+        <CursorPos X="3" Y="404"/>
         <UsageCount Value="20"/>
       </Unit2>
       <Unit3>
@@ -122,7 +122,7 @@
         <UsageCount Value="10"/>
       </Unit14>
     </Units>
-    <JumpHistory Count="2" HistoryIndex="1">
+    <JumpHistory Count="3" HistoryIndex="2">
       <Position1>
         <Filename Value="ble2com.lpr"/>
         <Caret Line="158" Column="16" TopLine="66"/>
@@ -131,6 +131,10 @@
         <Filename Value="ble2com.lpr"/>
         <Caret Line="30" Column="53" TopLine="11"/>
       </Position2>
+      <Position3>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="87" TopLine="57"/>
+      </Position3>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

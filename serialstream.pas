@@ -21,11 +21,12 @@ type
 
 implementation
 
-constructor TSerialStream.Create(const ADevice: string; const ABaud, AByteSize: integer;
-  const AParity: TParityType; const AStopBits: integer);
+constructor TSerialStream.Create(const ADevice: string;
+  const ABaud, AByteSize: integer; const AParity: TParityType; const AStopBits: integer);
 begin
   inherited Create(SerOpen(ADevice));
-  if Handle = 0 then begin
+  if Handle = 0 then
+  begin
     raise Exception.Create('Unable to open serial device');
   end;
   SerSetParams(Handle, ABaud, AByteSize, AParity, AStopBits, []);
@@ -43,4 +44,3 @@ begin
 end;
 
 end.
-
