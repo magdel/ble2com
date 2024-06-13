@@ -17,7 +17,7 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MinorVersionNr Value="1"/>
+      <MinorVersionNr Value="2"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable Comments="https://github.com/magdel/ble2com" FileDescription="Reads BLE and writes to COM port " LegalCopyright="All rights reserved" ProductName="ble2com"/>
     </VersionInfo>
@@ -35,11 +35,14 @@
             <OtherUnitFiles Value="SimpleBleUnit"/>
             <UnitOutputDirectory Value="lib\$(TargetOS)-$(TargetCPU)"/>
           </SearchPaths>
+          <Parsing>
+            <Style Value="1"/>
+          </Parsing>
           <CodeGeneration>
             <TargetCPU Value="x86_64"/>
             <TargetOS Value="win64"/>
             <Optimizations>
-              <OptimizationLevel Value="2"/>
+              <OptimizationLevel Value="0"/>
             </Optimizations>
           </CodeGeneration>
           <Linking>
@@ -181,6 +184,10 @@
       <OtherUnitFiles Value="SimpleBleUnit"/>
       <UnitOutputDirectory Value="lib\Debug"/>
     </SearchPaths>
+    <CodeGeneration>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="win64"/>
+    </CodeGeneration>
     <Linking>
       <Debugging>
         <DebugInfoType Value="dsDwarf3"/>

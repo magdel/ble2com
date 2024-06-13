@@ -32,7 +32,7 @@ uses
   CustApp,
   IniFiles,
   SerialStream,
-  simpleble;
+  SimpleBle;
 
 type
 
@@ -69,9 +69,10 @@ var
   PeripheralListLen: nativeuint = 0;
   Adapter: TSimpleBleAdapter = 0;
 
-  DeviceIdFromConfig: string = 'None';
-  CharacteristicFromConfig: string = 'None';
-  ComPortFromConfig: string = 'None';
+  ScanTimeoutMs: integer;
+  DeviceIdFromConfig: string;
+  CharacteristicFromConfig: string;
+  ComPortFromConfig: string;
   SerialPortStream: TSerialStream;
   BufferMemoryStream: TMemoryStream;
   BufferCriticalSection: TRTLCriticalSection;
@@ -231,7 +232,8 @@ var
       Terminate;
       Exit;
     end;
-    WriteLn('Found BLE adapter and got handle.');
+    WriteLn('Found BLE adapter and got handle. Scanning for ' + IntToStr(
+      ScanTimeoutMs) + 'ms..');
 
     // register SimpleBLE scan callback functions
     SimpleBleAdapterSetCallbackOnScanStart(Adapter, @AdapterOnScanStart, nil);
@@ -240,8 +242,14 @@ var
     SimpleBleAdapterSetCallbackOnScanUpdated(Adapter, @AdapterOnScanFoundUpdated, nil);
 
     // start BLE scanning for 5 seconds
-    SimpleBleAdapterScanFor(Adapter, 5000);
+    SimpleBleAdapterScanFor(Adapter, ScanTimeoutMs);
 
+    if (PeripheralListLen = 0) then
+    begin
+      WriteLn('No devices were found, exiting');
+      Terminate;
+      Exit;
+    end;
     // list found Peripheral devices
     WriteLn('The following devices were found:');
     for i := 0 to (PeripheralListLen - 1) do
@@ -407,9 +415,10 @@ var
     StopOnException := True;
     iniF := TIniFile.Create('bledevice.ini');
     try
+      ScanTimeoutMs := iniF.ReadInteger('BleDevice', 'scanTimeoutMs', 10000);
       DeviceIdFromConfig := iniF.ReadString('BleDevice', 'deviceId', 'None');
       CharacteristicFromConfig := iniF.ReadString('BleDevice', 'characteristic', 'None');
-      ComPortFromConfig := iniF.ReadString('ComPort', 'Port', 'None');
+      ComPortFromConfig := iniF.ReadString('ComPort', 'port', 'None');
     finally
       iniF.Free;
     end;
@@ -438,11 +447,11 @@ var
 var
   Application: TBle2ComApplication;
 
-{$R *.res}
+  {$R *.res}
 
 begin
   Application := TBle2ComApplication.Create(nil);
-  Application.Title := 'SimpleBleScanTest';
+  Application.Title := 'Ble2Com';
   Application.Run;
   Application.Free;
 end.

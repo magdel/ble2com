@@ -71,3 +71,5 @@ modules/
 /backup/
 /.idea/
 /lib/
+/bin/win64-x86_64/backup/
+/SimpleBleUnit/simpleble.ppu
