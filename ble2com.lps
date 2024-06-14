@@ -8,12 +8,11 @@
       <Unit0>
         <Filename Value="ble2com.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="76"/>
-        <CursorPos X="39" Y="51"/>
-        <UsageCount Value="76"/>
+        <TopLine Value="98"/>
+        <CursorPos X="47" Y="119"/>
+        <UsageCount Value="79"/>
         <Bookmarks Count="1">
-          <Item0 Y="415" ID="1"/>
+          <Item0 Y="416" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit0>
@@ -23,16 +22,18 @@
         <UnitName Value="SerialStream"/>
         <EditorIndex Value="5"/>
         <CursorPos Y="27"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="SimpleBleUnit\simpleble.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimpleBle"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="79" Y="10"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="423"/>
+        <CursorPos X="53" Y="461"/>
+        <UsageCount Value="69"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -46,9 +47,8 @@
       <Unit4>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\inc\systemh.inc"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="413"/>
-        <CursorPos X="3" Y="432"/>
-        <UsageCount Value="11"/>
+        <CursorPos X="38" Y="417"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -57,7 +57,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="5"/>
         <CursorPos X="3" Y="30"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -107,7 +107,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="991"/>
         <CursorPos X="17" Y="1019"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -122,14 +122,14 @@
         <EditorIndex Value="8"/>
         <TopLine Value="492"/>
         <CursorPos X="3" Y="503"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="bin\win64-x86_64\bledevice.ini"/>
         <EditorIndex Value="3"/>
         <CursorPos X="25" Y="8"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Ini"/>
       </Unit15>
@@ -139,130 +139,130 @@
         <EditorIndex Value="6"/>
         <TopLine Value="19"/>
         <CursorPos X="34" Y="29"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit16>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="91" TopLine="64"/>
+        <Caret Line="88" TopLine="65"/>
       </Position1>
       <Position2>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="92" TopLine="64"/>
+        <Caret Line="89" TopLine="65"/>
       </Position2>
       <Position3>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="91" Column="7" TopLine="79"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="6"/>
       </Position3>
       <Position4>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="88" TopLine="79"/>
+        <Caret Line="88" TopLine="65"/>
       </Position4>
       <Position5>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="89" TopLine="79"/>
+        <Caret Line="89" TopLine="65"/>
       </Position5>
       <Position6>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="92" TopLine="79"/>
+        <Filename Value="bin\win64-x86_64\bledevice.ini"/>
+        <Caret Line="8" Column="11"/>
       </Position6>
       <Position7>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="35" Column="3" TopLine="15"/>
+        <Caret Line="88" TopLine="65"/>
       </Position7>
       <Position8>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="34" Column="17" TopLine="11"/>
+        <Caret Line="92" TopLine="65"/>
       </Position8>
       <Position9>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="35" Column="3" TopLine="12"/>
+        <Caret Line="88" TopLine="65"/>
       </Position9>
       <Position10>
         <Filename Value="ble2com.lpr"/>
-        <Caret Line="88" TopLine="65"/>
+        <Caret Line="373" Column="50" TopLine="354"/>
       </Position10>
       <Position11>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="89" TopLine="65"/>
+        <Filename Value="serialstream.pas"/>
+        <Caret Line="27" Column="27"/>
       </Position11>
       <Position12>
-        <Filename Value="SimpleBleUnit\simpleble.pas"/>
-        <Caret Line="6"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="1019" Column="20" TopLine="996"/>
       </Position12>
       <Position13>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="88" TopLine="65"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\streams.inc"/>
+        <Caret Line="502" Column="3" TopLine="499"/>
       </Position13>
       <Position14>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="89" TopLine="65"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
+        <Caret Line="1019" Column="17" TopLine="991"/>
       </Position14>
       <Position15>
-        <Filename Value="bin\win64-x86_64\bledevice.ini"/>
-        <Caret Line="8" Column="11"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\streams.inc"/>
+        <Caret Line="503" Column="3" TopLine="492"/>
       </Position15>
       <Position16>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="88" TopLine="65"/>
+        <Filename Value="serialstream.pas"/>
+        <Caret Line="27" Column="27"/>
       </Position16>
       <Position17>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="92" TopLine="65"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
+        <Caret Line="31" Column="12" TopLine="10"/>
       </Position17>
       <Position18>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="88" TopLine="65"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
+        <Caret Line="178" Column="49" TopLine="174"/>
       </Position18>
       <Position19>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="373" Column="50" TopLine="354"/>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
+        <Caret Line="185" TopLine="174"/>
       </Position19>
       <Position20>
         <Filename Value="serialstream.pas"/>
-        <Caret Line="27" Column="27"/>
+        <Caret Line="27"/>
       </Position20>
       <Position21>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
-        <Caret Line="1019" Column="20" TopLine="996"/>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="93" Column="22" TopLine="67"/>
       </Position21>
       <Position22>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\streams.inc"/>
-        <Caret Line="502" Column="3" TopLine="499"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="461" Column="36" TopLine="378"/>
       </Position22>
       <Position23>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
-        <Caret Line="1019" Column="17" TopLine="991"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="404" Column="61" TopLine="378"/>
       </Position23>
       <Position24>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\streams.inc"/>
-        <Caret Line="503" Column="3" TopLine="492"/>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="93" Column="22" TopLine="67"/>
       </Position24>
       <Position25>
-        <Filename Value="serialstream.pas"/>
-        <Caret Line="27" Column="27"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="460" Column="44" TopLine="430"/>
       </Position25>
       <Position26>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
-        <Caret Line="31" Column="12" TopLine="10"/>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="92" Column="32" TopLine="69"/>
       </Position26>
       <Position27>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
-        <Caret Line="178" Column="49" TopLine="174"/>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="86" Column="5" TopLine="69"/>
       </Position27>
       <Position28>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\serial.pp"/>
-        <Caret Line="185" TopLine="174"/>
+        <Filename Value="ble2com.lpr"/>
+        <Caret Line="261" Column="37" TopLine="232"/>
       </Position28>
       <Position29>
-        <Filename Value="serialstream.pas"/>
-        <Caret Line="27"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="453" Column="41" TopLine="423"/>
       </Position29>
       <Position30>
-        <Filename Value="ble2com.lpr"/>
-        <Caret Line="131" TopLine="136"/>
+        <Filename Value="SimpleBleUnit\simpleble.pas"/>
+        <Caret Line="461" Column="55" TopLine="447"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -272,11 +272,9 @@
       </Modes>
     </RunParams>
     <HistoryLists Count="3">
-      <List0 Name="WorkingDirectory" Type="File" Count="1"/>
-      <List1 Name="LaunchingApplication" Type="File" Count="1">
+      <List0 Name="LaunchingApplication" Type="File" Count="1">
         <Item1 Value="C:\WINDOWS\system32\cmd.exe /C ${TargetCmdLine}"/>
-      </List1>
-      <List2 Name="CommandLineParameters" Count="1"/>
+      </List0>
     </HistoryLists>
   </ProjectSession>
   <Debugging>

@@ -128,6 +128,7 @@ var
       // As there was no space left for this peripheral, release the associated handle.
       SimpleBlePeripheralReleaseHandle(peripheral);
     end;
+    SimpleBleFree(AdapterIdentifier);
     SimpleBleFree(PeripheralIdentifier);
     SimpleBleFree(PeripheralAddress);
   end;
