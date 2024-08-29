@@ -1,4 +1,8 @@
 # ble2com
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/magdel/ble2com/blob/main/LICENSE.txt)
+[![Hits-of-Code](https://hitsofcode.com/github/magdel/ble2com?branch=main&label=Hits-of-Code)](https://hitsofcode.com/github/magdel/ble2com/view?branch=main&label=Hits-of-Code)
+
 Reads BLE data and writes to COM-port so it can be readout as COM-port via virtual null-modem (one like https://sourceforge.net/projects/com0com/)
 
 ## Usage
