@@ -40,6 +40,7 @@ type
 
   TBle2ComApplication = class(TCustomApplication)
   protected
+    procedure RunInternal;
     procedure DoRun; override;
   public
     constructor Create(TheOwner: TComponent); override;
@@ -152,10 +153,12 @@ var
   var
     i: integer;
   begin
-    Write('Received[' + IntToStr(DataLength) + ']: ');
+    if (ComPortFromConfig <> 'CONSOLE') then
+      Write('Received[' + IntToStr(DataLength) + ']: ');
     for i := 0 to (DataLength - 1) do
       Write(ansichar(Data[i]));
-    WriteLn();
+    if (ComPortFromConfig <> 'CONSOLE') then
+      WriteLn();
 
     EnterCriticalsection(BufferCriticalSection);
     try
@@ -189,15 +192,31 @@ var
         LeaveCriticalsection(BufferCriticalSection);
       end;
       if (readCount > 0) then
-        SerialPortStream.Write(LBuffer, readCount);
-      WriteLn('Sent: ' + IntToStr(readCount));
+      begin
+        if (ComPortFromConfig <> 'CONSOLE') then
+        begin
+          SerialPortStream.Write(LBuffer, readCount);
+          WriteLn('Sent: ' + IntToStr(readCount));
+        end;
+      end;
     end;
   end;
 
   { -------------------------------- }
-
-
   procedure TBle2ComApplication.DoRun;
+  begin
+    try
+      RunInternal;
+    except
+      on E: Exception do
+      begin
+        WriteLn('Internal error: ' + E.Message);
+      end;
+    end;
+
+  end;
+
+  procedure TBle2ComApplication.RunInternal;
   var
     ErrorMsg: string;
     Adapter: TSimpleBleAdapter;
@@ -369,10 +388,14 @@ var
     ReadThread := TReadThread.Create(True);
     ReadThread.Start;
 
-    WriteLn('Opening: ' + ComPortFromConfig);
-    SerialPortStream := TSerialStream.Create(ComPortFromConfig, 9600);
-
-
+    if (ComPortFromConfig <> 'CONSOLE') then
+    begin
+      WriteLn('Opening: ' + ComPortFromConfig);
+      SerialPortStream := TSerialStream.Create(ComPortFromConfig, 9600);
+    end else
+    begin
+       WriteLn('Output to CONSOLE');
+    end;
 
     // subscribe to notification and register callback function
     SimpleBlePeripheralNotify(Peripheral, CharacteristicList[Selection].Service,
@@ -382,7 +405,8 @@ var
     while (True) do
     begin
       Sleep(10000);
-      WriteLn('Listening..' + DateTimeToStr(Now));
+      if (ComPortFromConfig <> 'CONSOLE') then
+        WriteLn('Listening..' + DateTimeToStr(Now));
     end;
 
     // unsubscribe notifications
@@ -393,7 +417,8 @@ var
     SimpleBlePeripheralDisconnect(Peripheral);
     //end;
 
-    SerialPortStream.Free;
+    if (ComPortFromConfig <> 'CONSOLE') then
+      SerialPortStream.Free;
     // wait for enter
     ReadLn();
 

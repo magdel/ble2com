@@ -12,6 +12,20 @@ Also use bledevice.ini to specify COM-port. And you may set device and service t
 
 ![Sample running view](docs/images/img.png)
 
+bledevice.ini
+
+    [BleDevice]
+    scanTimeoutMs=10000
+    deviceId=56:1e:04:0c:87:78
+    characteristic=0000ffe1-0000-1000-8000-00805f9b34fb
+    [ComPort]
+    ;port=\\.\COM20
+    port=CONSOLE
+
+If application starts and finds device with deviceId and characteristic from config then application connects and starts reading data
+and writing it to port. If config is absent or specified objects was not found application asks to select what to use.
+When port=CONSOLE data read and is output to console only (it's mainly for some debug purpose).
+
 ### Releases
 
 For direct downloads, check out [Releases](../../releases).
